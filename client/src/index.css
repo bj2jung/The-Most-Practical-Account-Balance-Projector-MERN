@@ -1,0 +1,453 @@
+@charset "UTF-8";
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 800ms linear;
+}
+
+.invalid {
+  border-color: #ff6d6d;
+}
+
+.errorMessages {
+  color: #ff6d6d;
+}
+
+#addItemButton,
+#confirmButton {
+  border: none;
+  height: 2em;
+  width: 2em;
+}
+
+#githubIcon {
+  height: 5em;
+  width: 5em;
+}
+
+#registerForm,
+#loginForm {
+  display: grid;
+  grid-row-gap: 0.2em;
+}
+
+body {
+  padding: 2em 2em 10em 2em;
+  font-size: 16px;
+}
+body header {
+  display: grid;
+  grid-template-columns: 8fr 3fr 1fr;
+  min-height: 92px;
+}
+body header h1 {
+  margin-bottom: auto 0;
+}
+body header .loginLogoutRegisterButtons {
+  text-align: right;
+  margin: auto 1em auto auto;
+  padding: 0.5em;
+}
+body header .githubLink {
+  margin: auto;
+}
+body .chartsDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
+  grid-gap: 1em;
+}
+body .chartsDiv .lineChartDiv {
+  width: 90%;
+  margin: auto;
+  min-width: 670px;
+}
+body .chartsDiv .pieChartsDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+body .chartsDiv .pieChartsDiv .incomePieChartDiv {
+  width: 90%;
+  margin: auto;
+  min-width: 335px;
+}
+body .chartsDiv .pieChartsDiv .expensePieChartDiv {
+  width: 90%;
+  margin: auto;
+  min-width: 335px;
+}
+body .optionsDiv {
+  margin-top: 2em;
+}
+body .optionsDiv .optionsDivHeader {
+  width: 50rem;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+body .optionsDiv .optionsDivContent {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2.5fr 1fr;
+  border: solid 2px #f2f2f2;
+  margin: 0em auto 2em auto;
+  justify-items: center;
+  justify-content: center;
+  align-items: top;
+  width: 50em;
+}
+body .optionsDiv .optionsDivContent #optionsDateSelector {
+  max-width: 6em;
+  padding: 0;
+  margin: auto;
+  font-size: 16px;
+  height: 2em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+body .optionsDiv .optionsDivContent #updateStartingBalance,
+body .optionsDiv .optionsDivContent #resetButton {
+  width: 2em;
+  height: 2em;
+}
+body .optionsDiv .optionsDivContent .periodRadioOption,
+body .optionsDiv .optionsDivContent .chartRadioOption {
+  margin: 0;
+}
+body .optionsDiv .optionsDivContent form {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr;
+  align-items: center;
+}
+body .optionsDiv .optionsDivContent form * {
+  box-sizing: border-box;
+}
+body .optionsDiv .optionsDivContent form .optionsDateSelectorDiv {
+  grid-column: 1/2;
+}
+body .optionsDiv .optionsDivContent form .centered {
+  grid-column: 2/3;
+  width: 12em;
+  height: 2em;
+  margin: auto;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+body .optionsDiv .optionsDivContent form .group {
+  width: 100%;
+  height: 2em;
+  overflow: hidden;
+  position: relative;
+}
+body .optionsDiv .optionsDivContent form label {
+  position: absolute;
+  top: 0.25em;
+  left: 0.5em;
+  color: #969696;
+  cursor: text;
+  transition: 0.25s ease;
+}
+body .optionsDiv .optionsDivContent form input {
+  display: inline-block;
+  width: 100%;
+  height: 2em;
+  border: solid 1px #f2f2f2;
+  border-radius: 0.5em;
+  color: black;
+  transition: 0.3s ease;
+  margin: auto;
+}
+body .optionsDiv .optionsDivContent form input:valid, body .optionsDiv .optionsDivContent form input:focus {
+  outline: none;
+}
+body .optionsDiv .optionsDivContent form input:valid ~ label, body .optionsDiv .optionsDivContent form input:focus ~ label {
+  top: 0;
+  font: 700 0.48em Roboto;
+  color: #2196f3;
+}
+body .optionsDiv .optionsDivContent form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: black !important;
+}
+body .optionsDiv .optionsDivContent form #updateStartingBalance {
+  border: none;
+}
+body .optionsDiv .optionsDivContent form ::selection {
+  background: rgba(33, 150, 243, 0.3);
+}
+body .optionsDiv .optionsDivContent .chartSelectDiv {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  justify-items: center;
+  align-items: center;
+}
+body .optionsDiv .optionsDivContent .periodSelectDiv {
+  display: grid;
+  grid-template-columns: 4fr 5fr 4fr;
+  justify-items: center;
+  align-items: center;
+}
+body .itemTablesDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(825px, 1fr));
+  grid-gap: 1em;
+  justify-items: center;
+}
+body .itemTablesDiv .addItemRow *,
+body .itemTablesDiv .editItemRow * {
+  box-sizing: border-box;
+}
+body .itemTablesDiv .addItemRow .centered,
+body .itemTablesDiv .editItemRow .centered {
+  width: 12em;
+  height: 2em;
+  margin: auto;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+body .itemTablesDiv .addItemRow .group,
+body .itemTablesDiv .editItemRow .group {
+  width: 100%;
+  height: 2em;
+  overflow: hidden;
+  position: relative;
+}
+body .itemTablesDiv .addItemRow label,
+body .itemTablesDiv .editItemRow label {
+  position: absolute;
+  top: 0.25em;
+  color: #969696;
+  cursor: text;
+  transition: 0.25s ease;
+}
+body .itemTablesDiv .addItemRow input,
+body .itemTablesDiv .editItemRow input {
+  display: block;
+  width: 100%;
+  height: 2em;
+  border: solid 1px #f2f2f2;
+  border-radius: 0.5em;
+  color: black;
+  transition: 0.3s ease;
+  margin: auto;
+}
+body .itemTablesDiv .addItemRow input:valid, body .itemTablesDiv .addItemRow input:focus,
+body .itemTablesDiv .editItemRow input:valid,
+body .itemTablesDiv .editItemRow input:focus {
+  outline: none;
+}
+body .itemTablesDiv .addItemRow input:valid ~ label, body .itemTablesDiv .addItemRow input:focus ~ label,
+body .itemTablesDiv .editItemRow input:valid ~ label,
+body .itemTablesDiv .editItemRow input:focus ~ label {
+  top: 0;
+  font: 700 0.48em Roboto;
+  color: #2196f3;
+}
+body .itemTablesDiv .addItemRow input:-webkit-autofill,
+body .itemTablesDiv .editItemRow input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: black !important;
+}
+body .itemTablesDiv .addItemRow ::selection,
+body .itemTablesDiv .editItemRow ::selection {
+  background: rgba(33, 150, 243, 0.3);
+}
+body .itemTablesDiv .addItemRow .column1,
+body .itemTablesDiv .editItemRow .column1 {
+  padding: 8px 0;
+}
+body .itemTablesDiv .addItemRow .column2,
+body .itemTablesDiv .editItemRow .column2 {
+  text-align: left;
+  padding: 8px 0;
+}
+body .itemTablesDiv .addItemRow .column2 input,
+body .itemTablesDiv .editItemRow .column2 input {
+  width: 5em;
+}
+body .itemTablesDiv .addItemRow .column1 label,
+body .itemTablesDiv .editItemRow .column1 label {
+  left: 0.5em;
+}
+body .itemTablesDiv .addItemRow .column2 label,
+body .itemTablesDiv .editItemRow .column2 label {
+  left: 0.5em;
+}
+body .itemTablesDiv .addItemRow .column3,
+body .itemTablesDiv .addItemRow .column4,
+body .itemTablesDiv .addItemRow .column6,
+body .itemTablesDiv .editItemRow .column3,
+body .itemTablesDiv .editItemRow .column4,
+body .itemTablesDiv .editItemRow .column6 {
+  padding: 0.5em;
+}
+body .itemTablesDiv .addItemRow .dropDown,
+body .itemTablesDiv .editItemRow .dropDown {
+  /* Reset Select */
+  /* Custom Select */
+  /* Arrow */
+  /* Transition */
+}
+body .itemTablesDiv .addItemRow .dropDown select,
+body .itemTablesDiv .editItemRow .dropDown select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: solid 1px #f2f2f2;
+  background: #fff;
+  background-image: none;
+}
+body .itemTablesDiv .addItemRow .dropDown .select,
+body .itemTablesDiv .editItemRow .dropDown .select {
+  position: relative;
+  display: block;
+  width: 6.5em;
+  height: 2em;
+  overflow: hidden;
+  border-radius: 0.5em;
+  margin: auto;
+}
+body .itemTablesDiv .addItemRow .dropDown select,
+body .itemTablesDiv .editItemRow .dropDown select {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5em;
+  color: black;
+  cursor: pointer;
+}
+body .itemTablesDiv .addItemRow .dropDown select::-ms-expand,
+body .itemTablesDiv .editItemRow .dropDown select::-ms-expand {
+  display: none;
+}
+body .itemTablesDiv .addItemRow .dropDown .select::after,
+body .itemTablesDiv .editItemRow .dropDown .select::after {
+  content: "▼";
+  position: absolute;
+  top: 0.25em;
+  right: 0.5em;
+  bottom: 0;
+  padding: 0;
+  background: #fff;
+  pointer-events: none;
+}
+body .itemTablesDiv .addItemRow .dropDown .select:hover::after,
+body .itemTablesDiv .editItemRow .dropDown .select:hover::after {
+  color: #2196f3;
+}
+body .itemTablesDiv .addItemRow .dropDown .select::after,
+body .itemTablesDiv .editItemRow .dropDown .select::after {
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+body .itemTablesDiv .addItemRow #IncomeEditItemEndDateExists,
+body .itemTablesDiv .addItemRow #IncomeAddItemEndDateExists,
+body .itemTablesDiv .addItemRow #ExpenseEditItemEndDateExists,
+body .itemTablesDiv .addItemRow #ExpenseAddItemEndDateExists,
+body .itemTablesDiv .editItemRow #IncomeEditItemEndDateExists,
+body .itemTablesDiv .editItemRow #IncomeAddItemEndDateExists,
+body .itemTablesDiv .editItemRow #ExpenseEditItemEndDateExists,
+body .itemTablesDiv .editItemRow #ExpenseAddItemEndDateExists {
+  width: 1em;
+  height: 1em;
+}
+body .itemTablesDiv .addItemRow .column5,
+body .itemTablesDiv .editItemRow .column5 {
+  padding: 1em 0em;
+}
+body .itemTablesDiv th {
+  height: 50px;
+}
+body .itemTablesDiv td {
+  height: 3em;
+}
+body .itemTablesDiv .editItemButton,
+body .itemTablesDiv .removeItemButton {
+  border: none;
+  height: 2em;
+  width: 2em;
+  margin: 0.5em 0;
+}
+body .itemTablesDiv .incomeTable,
+body .itemTablesDiv .expenseTable {
+  max-width: 100%;
+  min-width: 50em;
+}
+body .itemTablesDiv .column1 {
+  width: 14em;
+}
+body .itemTablesDiv .column2 {
+  width: 5em;
+}
+body .itemTablesDiv .column3 {
+  width: 6em;
+}
+body .itemTablesDiv .column5 {
+  width: 2.5em;
+}
+body .itemTablesDiv .column4,
+body .itemTablesDiv .column6 {
+  width: 120px;
+}
+body .itemTablesDiv .column2,
+body .itemTablesDiv .column3,
+body .itemTablesDiv .column4,
+body .itemTablesDiv .column5,
+body .itemTablesDiv .column6,
+body .itemTablesDiv .column7 {
+  text-align: center;
+}
+body .itemTablesDiv .column7 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 0;
+  max-width: 4em;
+  margin-right: 0;
+}
+body .itemTablesDiv .editItemButton,
+body .itemTablesDiv .removeItemButton {
+  display: none;
+}
+body .itemTablesDiv tr:hover .editItemButton,
+body .itemTablesDiv tr:hover .removeItemButton {
+  display: inline;
+}
+body .itemTablesDiv #addItemButton,
+body .itemTablesDiv #confirmButton {
+  border: none;
+  height: 2em;
+  width: 2em;
+  margin: 0.5em 0;
+}
+body .itemTablesDiv #IncomeAddItemStartDate,
+body .itemTablesDiv #IncomeAddItemEndDate,
+body .itemTablesDiv #IncomeEditItemStartDate,
+body .itemTablesDiv #IncomeEditItemEndDate,
+body .itemTablesDiv #ExpenseAddItemStartDate,
+body .itemTablesDiv #ExpenseAddItemEndDate,
+body .itemTablesDiv #ExpenseEditItemStartDate,
+body .itemTablesDiv #ExpenseEditItemEndDate {
+  max-width: 6em;
+  padding: 0;
+  margin: auto;
+  font-size: 16px;
+  height: 2em;
+  text-align: center;
+}
+body .itemTablesDiv .table-wrapper-scroll-y {
+  display: block;
+  height: 380px;
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=index.css.map */

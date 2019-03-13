@@ -1,0 +1,496 @@
+// react-transition-group
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 800ms linear;
+}
+
+.invalid {
+  border-color: #ff6d6d;
+}
+
+.errorMessages {
+  color: #ff6d6d;
+}
+
+#addItemButton,
+#confirmButton {
+  border: none;
+  height: 2em;
+  width: 2em;
+}
+
+#githubIcon {
+  height: 5em;
+  width: 5em;
+}
+
+#registerForm,
+#loginForm {
+  display: grid;
+  grid-row-gap: 0.2em;
+}
+
+body {
+  padding: 2em 2em 10em 2em;
+  font-size: 16px;
+
+  header {
+    display: grid;
+    grid-template-columns: 8fr 3fr 1fr;
+    h1 {
+      margin-bottom: auto 0;
+    }
+    min-height: 92px;
+    .loginLogoutRegisterButtons {
+      text-align: right;
+      margin: auto 1em auto auto;
+      padding: 0.5em;
+    }
+
+    .githubLink {
+      margin: auto;
+    }
+  }
+
+  .chartsDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
+    grid-gap: 1em;
+
+    .lineChartDiv {
+      width: 90%;
+      margin: auto;
+      min-width: 670px;
+    }
+
+    .pieChartsDiv {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.5em;
+
+      .incomePieChartDiv {
+        width: 90%;
+        margin: auto;
+        min-width: 335px;
+      }
+      .expensePieChartDiv {
+        width: 90%;
+        margin: auto;
+        min-width: 335px;
+      }
+    }
+  }
+
+  .optionsDiv {
+    margin-top: 2em;
+
+    .optionsDivHeader {
+      width: 50rem;
+      margin: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .optionsDivContent {
+      display: grid;
+      grid-template-columns: 4fr 2fr 2.5fr 1fr;
+      // grid-column-gap: 1em;
+      border: solid 2px #f2f2f2;
+      margin: 0em auto 2em auto;
+      justify-items: center;
+      justify-content: center;
+      align-items: top;
+      width: 50em;
+
+      #optionsDateSelector {
+        max-width: 6em;
+        padding: 0;
+        margin: auto;
+        font-size: 16px;
+        height: 2em;
+        text-align: center;
+        border-radius: 0.5em;
+      }
+
+      #updateStartingBalance,
+      #resetButton {
+        width: 2em;
+        height: 2em;
+      }
+
+      .periodRadioOption,
+      .chartRadioOption {
+        margin: 0;
+      }
+
+      form {
+        $main-color: #333;
+        $secondary-color: #2196f3;
+        $width: 12em;
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 0.5fr;
+        align-items: center;
+
+        * {
+          box-sizing: border-box;
+        }
+
+        .optionsDateSelectorDiv {
+          grid-column: 1/2;
+        }
+
+        .centered {
+          grid-column: 2/3;
+          width: $width;
+          height: 2em;
+          margin: auto;
+          position: relative;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+
+        .group {
+          width: 100%;
+          height: 2em;
+          overflow: hidden;
+          position: relative;
+        }
+
+        label {
+          position: absolute;
+          top: 0.25em;
+          left: 0.5em;
+          color: #969696;
+          cursor: text;
+          transition: 0.25s ease;
+        }
+
+        input {
+          display: inline-block;
+          width: 100%;
+          height: 2em;
+          border: solid 1px #f2f2f2;
+          border-radius: 0.5em;
+          color: black;
+          transition: 0.3s ease;
+          margin: auto;
+
+          &:valid,
+          &:focus {
+            outline: none;
+            ~ label {
+              top: 0;
+              font: 700 $width/25 Roboto;
+              color: $secondary-color;
+            }
+          }
+
+          &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            -webkit-text-fill-color: black !important;
+          }
+        }
+
+        #updateStartingBalance {
+          border: none;
+        }
+
+        ::selection {
+          background: rgba($secondary-color, 0.3);
+        }
+      }
+
+      .chartSelectDiv {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .periodSelectDiv {
+        display: grid;
+        grid-template-columns: 4fr 5fr 4fr;
+        justify-items: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .itemTablesDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(825px, 1fr));
+    grid-gap: 1em;
+    justify-items: center;
+
+    .addItemRow,
+    .editItemRow {
+      ////// input box styling //////
+      $main-color: #333;
+      $secondary-color: #2196f3;
+      $width: 12em;
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .centered {
+        width: $width;
+        height: 2em;
+        margin: auto;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .group {
+        width: 100%;
+        height: 2em;
+        overflow: hidden;
+        position: relative;
+      }
+
+      label {
+        position: absolute;
+        top: 0.25em;
+        color: #969696;
+        cursor: text;
+        transition: 0.25s ease;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        height: 2em;
+        border: solid 1px #f2f2f2;
+        border-radius: 0.5em;
+        color: black;
+        transition: 0.3s ease;
+        margin: auto;
+        &:valid,
+        &:focus {
+          outline: none;
+          ~ label {
+            top: 0;
+            font: 700 $width/25 Roboto;
+            color: $secondary-color;
+          }
+        }
+
+        &:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0px 1000px white inset;
+          -webkit-text-fill-color: black !important;
+        }
+      }
+
+      ::selection {
+        background: rgba($secondary-color, 0.3);
+      }
+
+      .column1 {
+        padding: 8px 0;
+      }
+      .column2 {
+        text-align: left;
+        padding: 8px 0;
+      }
+      .column2 input {
+        width: 5em;
+      }
+
+      .column1 label {
+        left: 0.5em;
+      }
+      .column2 label {
+        left: 0.5em;
+      }
+
+      .column3,
+      .column4,
+      .column6 {
+        padding: 0.5em;
+      }
+      ////// Input box CSS end //////
+
+      .dropDown {
+        ////// Dropdown CSS Start //////
+
+        /* Reset Select */
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          outline: 0;
+          box-shadow: none;
+          // border: 0 !important;
+          border: solid 1px #f2f2f2;
+          background: #fff;
+          background-image: none;
+        }
+        /* Custom Select */
+        .select {
+          position: relative;
+          display: block;
+          width: 6.5em;
+          height: 2em;
+          overflow: hidden;
+          border-radius: 0.5em;
+          margin: auto;
+        }
+        select {
+          width: 100%;
+          height: 100%;
+          padding: 0 0.5em;
+          color: black;
+          cursor: pointer;
+        }
+        select::-ms-expand {
+          display: none;
+        }
+        /* Arrow */
+        .select::after {
+          content: "\25BC";
+          position: absolute;
+          top: 0.25em;
+          right: 0.5em;
+          bottom: 0;
+          padding: 0;
+          background: #fff;
+          pointer-events: none;
+        }
+        /* Transition */
+        .select:hover::after {
+          color: #2196f3;
+        }
+        .select::after {
+          -webkit-transition: 0.25s all ease;
+          -o-transition: 0.25s all ease;
+          transition: 0.25s all ease;
+        }
+      }
+      ////// Dropdown CSS END //////
+
+      #IncomeEditItemEndDateExists,
+      #IncomeAddItemEndDateExists,
+      #ExpenseEditItemEndDateExists,
+      #ExpenseAddItemEndDateExists {
+        ////// Checkbox CSS //////
+        width: 1em;
+        height: 1em;
+      }
+
+      .column5 {
+        padding: 1em 0em;
+      }
+      ////// Checkbox CSS END //////
+    }
+
+    th {
+      height: 50px;
+    }
+
+    td {
+      height: 3em;
+    }
+
+    .editItemButton,
+    .removeItemButton {
+      border: none;
+      height: 2em;
+      width: 2em;
+      margin: 0.5em 0;
+    }
+
+    .incomeTable,
+    .expenseTable {
+      max-width: 100%;
+      min-width: 50em;
+      // margin: auto;
+    }
+
+    .column1 {
+      width: 14em;
+    }
+
+    .column2 {
+      width: 5em;
+    }
+
+    .column3 {
+      width: 6em;
+    }
+
+    .column5 {
+      width: 2.5em;
+    }
+
+    .column4,
+    .column6 {
+      width: 120px;
+    }
+
+    .column2,
+    .column3,
+    .column4,
+    .column5,
+    .column6,
+    .column7 {
+      text-align: center;
+    }
+
+    .column7 {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 0;
+      max-width: 4em;
+      margin-right: 0;
+    }
+
+    .editItemButton,
+    .removeItemButton {
+      display: none;
+    }
+
+    tr:hover .editItemButton,
+    tr:hover .removeItemButton {
+      display: inline;
+    }
+
+    #addItemButton,
+    #confirmButton {
+      border: none;
+      height: 2em;
+      width: 2em;
+      margin: 0.5em 0;
+    }
+
+    #IncomeAddItemStartDate,
+    #IncomeAddItemEndDate,
+    #IncomeEditItemStartDate,
+    #IncomeEditItemEndDate,
+    #ExpenseAddItemStartDate,
+    #ExpenseAddItemEndDate,
+    #ExpenseEditItemStartDate,
+    #ExpenseEditItemEndDate {
+      max-width: 6em;
+      padding: 0;
+      margin: auto;
+      font-size: 16px;
+      height: 2em;
+      text-align: center;
+    }
+    .table-wrapper-scroll-y {
+      display: block;
+      height: 380px;
+      overflow-y: auto;
+    }
+  }
+}
